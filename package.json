@@ -1,0 +1,17 @@
+{
+	"name":"@excitepv/pluckey",
+	"version":"1.0.0",
+	"description": "A tiny util library to pluck key from deep arrays and objects",
+	 "license": "MIT",
+	 "repository": "excitepv/pluckey",
+	 "main": "index.js",
+	 "keywords": [
+	    "plucky",
+	    "npm",
+	    "package",
+	    "excitepv",
+	    "pluck keys from array",
+	    "pluck keys",
+	    "dynamic pluck keys"
+	 ]
+}

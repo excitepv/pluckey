@@ -1,5 +1,5 @@
 {
-	"name":"@excitepv/pluckey",
+	"name":"pluckey",
 	"version":"1.0.0",
 	"description": "A tiny util library to pluck key from deep arrays and objects",
 	 "license": "MIT",

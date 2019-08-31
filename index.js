@@ -23,7 +23,11 @@ module.exports = function plucky(data, objectPathString){
 		return parsedData;
 }
 
-let _walk_through_and_pluck_keys = function(oData,keyList) {
+/*
+@private
+Recursively Walks through the oData and traverse in keyList order
+*/
+function _walk_through_and_pluck_keys(oData,keyList) {
 
 	if (!oData || !keyList || keyList.length <= 0)
 		return oData;

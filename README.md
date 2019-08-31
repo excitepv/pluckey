@@ -43,12 +43,12 @@ plucky(college,'class.student.results.subject');
 //output=> [ 'Tamil', 'Nodejs', 'English', 'Nodejs' ]
 
 plucky(college,'class.student.results'); 
-//output=> [
+/*output=> [
   { subject: 'Tamil', mark: 99 },
   { subject: 'Nodejs', mark: 80 },
   { subject: 'English', mark: 88 },
   { subject: 'Nodejs', mark: 89 }
-]
+]*/
 
 plucky(college,'class.student.name');
 //output=>[ 'Vigneshwaran P', 'Bob' ]

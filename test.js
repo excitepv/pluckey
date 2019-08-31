@@ -1,6 +1,6 @@
-const plucky = require('./index');
+const pluckey = require('./index');
 
-console.log("Testing plucky...");
+console.log("Testing pluckey...");
 
 let college={
 	class:{
@@ -35,6 +35,6 @@ let college={
 		]
 	}
 }
-console.log(plucky(college,'class.student.results.subject'));
-console.log(plucky(college,'class.student.results'));
-console.log(plucky(college,'class.student.name'));
+console.log(pluckey(college,'class.student.results.subject'));
+console.log(pluckey(college,'class.student.results'));
+console.log(pluckey(college,'class.student.name'));

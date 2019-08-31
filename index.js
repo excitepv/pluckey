@@ -16,31 +16,54 @@ module.exports = function plucky(data, objectPathString){
 		throw Error("Invalid parameters");
 		return;
 	}
-	let parsedData = _walk_through_and_pluck_keys(data, objectPathString.split('.'));
-	if(Array.isArray(parsedData))
-		return parsedData.flat(Infinity);
+	return _walk_through_and_pluck_keys(data, objectPathString.split('.'));
+}
+
+/*
+@private
+Util function to check object is array 
+*/
+function _isArray(input) {
+		if(input && input.constructor === Array)
+		return true;
 	else
-		return parsedData;
+		false;
 }
 
 /*
 @private
 Recursively Walks through the oData and traverse in keyList order
+@params {object} oData
+@params {Array} keyList
+@return object
 */
 function _walk_through_and_pluck_keys(oData,keyList) {
 
 	if (!oData || !keyList || keyList.length <= 0)
 		return oData;
 
-	if (Array.isArray(oData)) {
+	if (_isArray(oData)) {
 		
 		const currentkey = keyList[0];
 		let dataList = [];
 		for (let i = 0; i < oData.length; i++) {
+			let op;
 			if (keyList.length == 1) {
-				dataList.push(oData[i][currentkey]);
+				op = oData[i][currentkey];
 			} else {
-				dataList.push(_walk_through_and_pluck_keys(oData[i][currentkey], keyList.slice(1)));
+				op =  _walk_through_and_pluck_keys(oData[i][currentkey], keyList.slice(1));
+			}
+
+			//if array then loop and get keys to avoid flattening array finally
+			if(_isArray(op)){
+				let length = op.length;
+				let index = 0;
+				while(index < length){
+					dataList.push(op[index]);
+					++index;
+				}
+			}else{
+				dataList.push(op);
 			}
 		}
 		keyList.splice(0, 1);

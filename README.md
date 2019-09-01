@@ -39,10 +39,10 @@ let college={
 	}
 }
 
-plucky(college,'class.student.results.subject');
+pluckey(college,'class.student.results.subject');
 //output=> [ 'Tamil', 'Nodejs', 'English', 'Nodejs' ]
 
-plucky(college,'class.student.results'); 
+pluckey(college,'class.student.results'); 
 /*output=> [
   { subject: 'Tamil', mark: 99 },
   { subject: 'Nodejs', mark: 80 },
@@ -50,7 +50,7 @@ plucky(college,'class.student.results');
   { subject: 'Nodejs', mark: 89 }
 ]*/
 
-plucky(college,'class.student.name');
+pluckey(college,'class.student.name');
 //output=>[ 'Vigneshwaran P', 'Bob' ]
 ```
 

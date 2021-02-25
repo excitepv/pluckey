@@ -59,11 +59,15 @@ function _walk_through_and_pluck_keys(oData,keyList) {
 				let length = op.length;
 				let index = 0;
 				while(index < length){
-					dataList.push(op[index]);
+					if (op[index]) {
+						dataList.push(op[index]);
+					}
 					++index;
 				}
 			}else{
-				dataList.push(op);
+				if (op) {
+					dataList.push(op);
+				}
 			}
 		}
 		keyList.splice(0, 1);
